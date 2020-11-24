@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Geolocation22_1.html</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+
+        $(function(){
+            
+            $('#btn1').on('click',function(){
+               
+                $.ajax({
+                    type:'get',
+                    url:"https://ec9481db9d1c.ngrok.io/rest/contacts",
+                    dataType:'json',           
+                   
+                    success:function(data){
+                        console.log('서버로 부터 받은 데이타 : ',data);
+                    }				
+                });			
+                
+            });
+            
+            
+        });
+        
+        
+    
+    
+    </script>
 </head>
 <body>
     <h2>지도 서비스</h2>
-    <a href="https://ec9481db9d1c.ngrok.io/rest/contacts">모든 레코드 조회</a><br/>
+    <a href="#" id="btn1">모든 레코드 조회</a><br/>
     <a href="kakaomap.html">지도로 이동</a>
     <fieldset>
         <legend>Geolocation API-현재 위치 갱신하기:Netlify배포 및 Github연동</legend>
